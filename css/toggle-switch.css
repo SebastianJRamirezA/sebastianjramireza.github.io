@@ -1,0 +1,44 @@
+/*
+Styling for toggle switch from:
+B, Stone. 'How To Build a Tech Portfolio | Part 2: Enabling Interactivity With Javascript', 2022. [YouTube Video].
+https://www.youtube.com/watch?v=PUfiRZKlRgo
+*/
+
+.toggle-switch {
+    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+    color: lightgray;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: .875rem;
+    cursor: pointer;
+  }
+  
+  .toggle-switch-border {
+    display: inline-flex;
+    align-items: center;
+    width: 60px;
+    height: 36px;
+    border: 1px solid #dd0000; 
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-inline-start: 8px;
+  }
+  
+  .toggle-switch input {
+    display: none;
+  }
+  
+  .toggle-switch-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #dd0000;
+    transform: translate3d(3px, 0, 0);
+    transition: transform .1s ease-in-out;
+  }
+  
+  .toggle-switch input:checked + * .toggle-switch-dot {
+    transform: translate3d(26px, 0, 0);
+  }
