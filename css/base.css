@@ -15,10 +15,10 @@ body {
     --dark-primary: #820000;
     --dark-secondary: #5b0000 ;
 
-    --light-background: #ffefef;
+    --light-background: white;
     --light-text: black;
-    --light-primary: #5b0000 ;
-    --light-secondary: #820000;
+    --light-primary: #820000 ;
+    --light-secondary: #5b0000;
 
     --background: var(--light-background);
     --text: var(--light-text);
