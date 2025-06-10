@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sebastian Ramirez - Portfolio</title>
-  <meta name="description" content="Portfolio website showcasing the work, skills, and projects of Sebastian Ramirez.">
+  <title>Projects - Sebastian Ramirez</title>
+  <meta name="description" content="Explore projects developed by Sebastian Ramirez.">
   <meta name="author" content="Sebastian Ramirez">
-  <meta name="keywords" content="Portfolio, Web Developer, Projects, Skills, Contact, Sebastian Ramirez">
   
- <!-- Tailwind CSS -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -121,54 +120,77 @@
 
   <!-- Main Content Start -->
   <main class="flex-grow">
-    <!-- Hero Section -->
-    <header 
-      id="home-hero" 
-      class="py-16 md:py-24 bg-gradient-to-r from-primary-dark via-primary-DEFAULT to-primary-dark text-white text-center"
-    >
-      <div class="container mx-auto px-4">
-        <img 
-          src="img/myself.jpg" 
-          alt="Sebastian Ramirez" 
-          class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover"
-        />
-        <h1 class="text-4xl md:text-5xl font-heading font-bold mb-3">
-          Sebastian Ramirez
-        </h1>
-        <p class="text-xl md:text-2xl font-sans text-gray-200">
-          Software Developer & ML Engineer
-        </p>
-        <div class="mt-8">
-          <a href="about.html" class="text-lg inline-block bg-white text-primary-DEFAULT font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
-            Learn More About Me
-          </a>
-        </div>
-      </div>
-    </header>
+    <section id="projects-content" class="py-12 md:py-20 bg-light-bg dark:bg-dark-bg">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-center mb-10 md:mb-16 text-primary-DEFAULT dark:text-primary-DEFAULT">My Projects</h2>
+        
+        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          <!-- Project 1 -->
+          <div class="bg-light-card dark:bg-dark-card rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
+            <img 
+              src="img/projects/pitch-prediction.png"
+              alt="Pitch Prediction using Deep Learning" 
+              class="w-full h-64 object-cover" 
+            />
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-display font-semibold mb-3 text-primary-DEFAULT dark:text-primary-DEFAULT">Pitch Prediction using Deep Learning</h3>
+              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">
+                Applying AI to the sport of baseball. This project implements an ensemble of neural networks (LSTMs, GRUs, Attention-based LSTMs) to predict pitch type and location.
+              </p>
+              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">
+                Leveraging the Statcast dataset, the system processes sequential pitch data to forecast key characteristics of the next pitch, including its type (e.g., fastball, curveball) and location within the strike zone.
+              </p>
+              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">
+                The core innovation lies in its comprehensive approach to pitch prediction. By employing a multi-task learning framework, the model is trained to optimize for both pitch type and location, enhancing its predictive accuracy and utility for coaches, players, and analysts.
+              </p>
+              <div class="mt-auto pt-4 flex space-x-3">
+                <a
+                  href="https://github.com/SebastianJRamirezA/pitch_prediction_using_ML"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors"
+                >
+                  <i class="fab fa-github mr-2"></i>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
 
-    <!-- Brief Intro Section -->
-    <section class="py-12 md:py-20 text-center">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary-DEFAULT dark:text-primary-DEFAULT">Welcome to My Portfolio</h2>
-        <p class="text-lg md:text-xl text-light-text dark:text-dark-text max-w-3xl mx-auto mb-8">
-          Explore my journey in software development, my projects, and the skills I've cultivated. I'm passionate about creating innovative solutions and always eager to learn new things.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="p-6 bg-light-card dark:bg-dark-card rounded-lg shadow-lg">
-            <h3 class="text-2xl font-heading font-semibold mb-3 text-primary-DEFAULT">About Me</h3>
-            <p class="text-sm text-light-text dark:text-dark-text mb-4">Discover my background, education, and professional experience.</p>
-            <a href="about.html" class="font-semibold text-primary-DEFAULT hover:underline">Read More &rarr;</a>
+          <!-- Project 2 -->
+          <div class="bg-light-card dark:bg-dark-card rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
+            <img 
+              src="img/projects/route-master.png" 
+              alt="Route Master Simulation Game" 
+              class="w-full h-64 object-cover" 
+            />
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-display font-semibold mb-3 text-primary-DEFAULT dark:text-primary-DEFAULT">Route Master Simulation Game</h3>
+              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">
+                Route Master is a simulation game where you manage a bus company. Players aim to grow their earnings by testing different routes, upgrading their fleet, or taking risks by signing contracts.
+              </p>
+              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">
+                The goal is to become a tycoon in the urban transport sector!
+              </p>
+              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">
+                In this project, our team focused on creating an engaging experience. I contributed to developing the core simulation engine, building a realistic game world using probabilities, and worked on the UI and Achievements page. This collaborative effort resulted in a strategic and immersive simulation.
+              </p>
+              <div class="mt-auto pt-4 flex space-x-3">
+                <a
+                  href="https://github.com/3nity-studios/route-master"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors"
+                >
+                  <i class="fab fa-github mr-2"></i>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="p-6 bg-light-card dark:bg-dark-card rounded-lg shadow-lg">
-            <h3 class="text-2xl font-heading font-semibold mb-3 text-primary-DEFAULT">My Skills</h3>
-            <p class="text-sm text-light-text dark:text-dark-text mb-4">Check out the technologies and tools I work with.</p>
-            <a href="skills.html" class="font-semibold text-primary-DEFAULT hover:underline">View Skills &rarr;</a>
-          </div>
-          <div class="p-6 bg-light-card dark:bg-dark-card rounded-lg shadow-lg">
-            <h3 class="text-2xl font-heading font-semibold mb-3 text-primary-DEFAULT">Projects</h3>
-            <p class="text-sm text-light-text dark:text-dark-text mb-4">See some of the projects I've developed or contributed to.</p>
-            <a href="projects.html" class="font-semibold text-primary-DEFAULT hover:underline">Explore Projects &rarr;</a>
-          </div>
+          
+          <!-- Add more project cards as needed -->
+
         </div>
       </div>
     </section>
@@ -202,6 +224,5 @@
   <!-- Footer End -->
 
   <script src="js/script.js"></script>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
