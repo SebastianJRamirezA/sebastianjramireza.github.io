@@ -9,11 +9,9 @@
         </a>
       </div>
       <div class="hidden md:flex items-center space-x-4">
-        <a href="#about"
+        <a [routerLink]="'/about'"
           class="nav-link px-3 py-2 rounded-md text-sm font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">About
           Me</a>
-        <a href="#skills"
-          class="nav-link px-3 py-2 rounded-md text-sm font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Skills</a>
         <a [routerLink]="'/projects'"
           class="nav-link px-3 py-2 rounded-md text-sm font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Projects</a>
         <a href="#contact"
@@ -57,6 +55,29 @@
 </nav>
 
 <router-outlet></router-outlet>
+
+<!-- Contact Section -->
+<section id="contact" class="py-12 md:py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="text-lg text-light-text dark:text-dark-text mb-8">
+        I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.
+        Feel free to reach out!
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <a href="mailto:sebastian.ramirez.dev@example.com"
+          class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg shadow-md text-primary-DEFAULT bg-primary-DEFAULT hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT transition-transform transform hover:scale-105">
+          <i class="fas fa-envelope mr-2"></i> Send Email
+        </a>
+        <a href="https://www.linkedin.com/in/sebastianramirezdev/" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-8 py-3 border border-primary-DEFAULT text-base font-medium rounded-lg shadow-md text-primary-DEFAULT dark:text-primary-DEFAULT dark:hover:text-white hover:text-white hover:bg-primary-DEFAULT dark:hover:bg-primary-DEFAULT focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT transition-all transform hover:scale-105">
+          <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer
