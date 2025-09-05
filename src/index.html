@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sebastian Ramirez - Portfolio</title>
+  <meta name="description" content="Portfolio website showcasing the work, skills, and projects of Sebastian Ramirez. Built with HTML, Tailwind CSS, and JavaScript.">
+  <meta name="author" content="Sebastian Ramirez">
+  <meta name="keywords" content="Portfolio, Web Developer, Projects, Skills, Contact, HTML, Tailwind CSS, JavaScript, Sebastian Ramirez">
+  
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // or 'media'
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#820000', 
+              dark: '#5b0000'    
+            },
+            dark: {
+              bg: '#1a202c', 
+              text: '#e2e8f0', 
+              card: '#2d3748'  
+            },
+            light: {
+              bg: '#ffffff',
+              text: '#1a202c',
+              card: '#f7fafc'
+            }
+          },
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            heading: ['Roboto', 'sans-serif'], 
+          },
+          minHeight: {
+            '60vh': '60vh',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts (Lato and Roboto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+</html>

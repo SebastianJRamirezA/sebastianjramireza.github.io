@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+html.dark body::-webkit-scrollbar-track {
+    background: #2d3748;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+html.dark body::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+html.dark body::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+.section-title {
+    @apply text-3xl md:text-4xl font-heading font-bold text-center mb-10 md:mb-16 text-primary-DEFAULT dark:text-primary-DEFAULT;
+}
