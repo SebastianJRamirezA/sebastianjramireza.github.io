@@ -1,0 +1,52 @@
+<main class="flex-grow">
+    <section class="py-12 md:py-20 bg-white dark:bg-dark-bg transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Info Card -->
+            <div
+                class="bg-white dark:bg-dark-card rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8 mb-12 overflow-hidden transition-colors duration-300">
+                <img [src]="project.imageUrl" [alt]="project.title"
+                    class="w-100 md:w-50 object-cover rounded-lg shadow-xl border border-gray-200 dark:border-gray-700" />
+                <div class="flex-1 p-6">
+                    <h1 class="text-3xl md:text-4xl font-heading font-bold mb-2 text-primary-DEFAULT dark:text-white">{{
+                        project.title }}</h1>
+                    <div class="flex flex-wrap gap-2 mb-2">
+                        <span *ngFor="let tag of project.tags"
+                            class="px-3 py-1 bg-primary-DEFAULT/10 text-primary-DEFAULT dark:text-primary-DEFAULT rounded-full text-xs font-semibold">#{{
+                            tag }}</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-2">
+                        <span *ngFor="let tool of project.tools"
+                            class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs">{{ tool }}</span>
+                    </div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">{{ project.date }}</div>
+                    <p class="text-base text-light-text dark:text-dark-text mb-4 leading-relaxed">{{ project.description
+                        }}</p>
+                    <a *ngIf="project.projectUrl" [href]="project.projectUrl" target="_blank" rel="noopener"
+                        class="modern-btn mt-2">
+                        <i class="fab fa-github mr-2"></i> View Project on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Background Section -->
+            <section
+                class="mb-12 md:mb-16 p-6 bg-white dark:bg-dark-card rounded-lg shadow-lg transition-colors duration-300">
+                <h2 class="text-2xl md:text-3xl font-heading font-semibold mb-4 text-primary-DEFAULT dark:text-white">
+                    Background
+                </h2>
+                <div class="text-light-text dark:text-dark-text">
+                    {{ project.background }}</div>
+            </section>
+
+            <!-- Development Section -->
+            <section
+                class="mb-12 md:mb-16 p-6 bg-white dark:bg-dark-card rounded-lg shadow-lg transition-colors duration-300">
+                <h2 class="text-2xl md:text-3xl font-heading font-semibold mb-4 text-primary-DEFAULT dark:text-white">
+                    Development
+                </h2>
+                <div class="text-light-text dark:text-dark-text">
+                    {{ project.development }}</div>
+            </section>
+        </div>
+    </section>
+</main>
