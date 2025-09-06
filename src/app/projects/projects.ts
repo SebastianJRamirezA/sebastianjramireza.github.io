@@ -23,12 +23,6 @@ export class Projects {
       description: `Route Master is a simulation game where you manage a bus company. Players aim to grow their earnings by testing different routes, upgrading their fleet, or taking risks by signing contracts. The goal is to become a tycoon in the urban transport sector! In this project, our team focused on creating an engaging experience. I contributed to developing the core simulation engine, building a realistic game world using probabilities, and worked on the UI and Achievements page. This collaborative effort resulted in a strategic and immersive simulation.`,
       imageUrl: 'projects/route-master.png',
       projectUrl: 'https://github.com/3nity-studios/route-master'
-    },
-    {
-      title: 'Computer Vision System for Urban Traffic Monitoring in Laramie',
-      description: `This project involved the development of an automated traffic monitoring system using computer vision techniques, a key component of a simulated city planning initiative for Laramie, Wyoming. As part of this coursework, I designed and implemented two core applications: Real-time Vehicle Detection and Tracking and Automated Vehicle Counting for Traffic Flow Analysis`,
-      imageUrl: 'projects/route-master.png',
-      projectUrl: ''
     }
   ];
 }
