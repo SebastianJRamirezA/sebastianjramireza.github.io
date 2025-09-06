@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 import { Home } from './home/home';
 
 @Component({
@@ -10,4 +11,15 @@ import { Home } from './home/home';
 })
 export class App {
   protected readonly title = signal('portfolio');
+
+  constructor(router: Router) {
+    router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      // Only scroll to top if not navigating to an anchor (e.g., #contact)
+      if (!event.urlAfterRedirects.includes('#')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
 }
