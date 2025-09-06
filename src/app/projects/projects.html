@@ -1,69 +1,15 @@
 <main class="flex-grow">
-  <section id="about-me-content" class="py-12 md:py-20 bg-light-card dark:bg-dark-card transition-colors duration-300">
+  <section id="projects-content" class="py-12 md:py-20 bg-light-bg dark:bg-dark-bg">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2
         class="text-3xl md:text-4xl font-heading font-bold text-center mb-10 md:mb-16 text-primary-DEFAULT dark:text-primary-DEFAULT">
-        Projects</h2>
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="section-title">Projects</h2>
-        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-          <!-- Project Card 1 -->
-          <div
-            class="bg-light-bg dark:bg-dark-bg rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
-            <img src="projects/pitch-prediction.png" alt="Pitch Prediction Project" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-heading font-semibold mb-3 text-primary-DEFAULT dark:text-primary-DEFAULT">Pitch
-                Prediction using Deep Learning</h3>
-              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">Applying AI to the sport of
-                baseball. This project implements an ensemble of neural networks (LSTMs, GRUs, Attention-based LSTMs)
-                to
-                predict pitch type and location.</p>
-              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">Leveraging the Statcast
-                dataset,
-                the system processes sequential pitch data to forecast key characteristics of the next pitch,
-                including
-                its type (e.g., fastball, curveball) and location within the strike zone.</p>
-              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">The core innovation lies in
-                its
-                comprehensive approach to pitch prediction. By employing a multi-task learning framework, the model is
-                trained to optimize for both pitch type and location, enhancing its predictive accuracy and utility
-                for
-                coaches, players, and analysts.</p>
-              <div class="mt-auto pt-4 flex space-x-3">
-                <a href="https://github.com/SebastianJRamirezA/pitch_prediction_using_ML" target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
-                  <i class="fab fa-github mr-2"></i> View on GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 2 -->
-          <div
-            class="bg-light-bg dark:bg-dark-bg rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
-            <img src="projects/route-master.png" alt="Route Master Simulation Game" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-heading font-semibold mb-3 text-primary-DEFAULT dark:text-primary-DEFAULT">Route
-                Master Simulation Game</h3>
-              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">Route Master is a simulation
-                game where you manage a bus company. Players aim to grow their earnings by testing different routes,
-                upgrading their fleet, or taking risks by signing contracts.</p>
-              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">The goal is to become a
-                tycoon
-                in the urban transport sector!</p>
-              <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">In this project, our team
-                focused on creating an engaging experience. I contributed to developing the core simulation engine,
-                building a realistic game world using probabilities, and worked on the UI and Achievements page. This
-                collaborative effort resulted in a strategic and immersive simulation.</p>
-              <div class="mt-auto pt-4 flex space-x-3">
-                <a href="https://github.com/3nity-studios/route-master" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
-                  <i class="fab fa-github mr-2"></i> View on GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        My Projects</h2>
+
+      <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        @for(project of projects; track project.title) {
+        <app-project-card [project]="project"></app-project-card>
+        }
+
       </div>
     </div>
   </section>
