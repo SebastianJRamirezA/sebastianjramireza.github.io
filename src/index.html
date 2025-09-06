@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sebastian Ramirez - Portfolio</title>
+  <meta name="description" content="Portfolio website showcasing the work, skills, and projects of Sebastian Ramirez. Built with HTML, Tailwind CSS, and JavaScript.">
+  <meta name="author" content="Sebastian Ramirez">
+  <meta name="keywords" content="Portfolio, Web Developer, Projects, Skills, Contact, HTML, Tailwind CSS, JavaScript, Sebastian Ramirez">
+  
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Mobile menu toggle logic
+    document.addEventListener('DOMContentLoaded', function() {
+      var menuBtn = document.getElementById('mobileMenuButton');
+      var menu = document.getElementById('mobile-menu');
+      var menuIcon = document.getElementById('mobileMenuIcon');
+      if (menuBtn && menu && menuIcon) {
+        menuBtn.addEventListener('click', function() {
+          var isOpen = !menu.classList.contains('hidden');
+          menu.classList.toggle('hidden');
+          menuBtn.setAttribute('aria-expanded', String(!isOpen));
+          // Toggle icon between bars and close
+          if (isOpen) {
+            menuIcon.classList.remove('fa-xmark', 'fa-times');
+            menuIcon.classList.add('fa-bars');
+          } else {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark'); // FontAwesome 6 uses fa-xmark for close
+          }
+        });
+      }
+    });
+    tailwind.config = {
+      darkMode: 'class', // or 'media'
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#820000', 
+              dark: '#5b0000'    
+            },
+            dark: {
+              bg: '#1a202c', 
+              text: '#e2e8f0', 
+              card: '#2d3748'  
+            },
+            light: {
+              bg: '#ffffff',
+              text: '#1a202c',
+              card: '#f7fafc'
+            }
+          },
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            heading: ['Roboto', 'sans-serif'], 
+          },
+          minHeight: {
+            '60vh': '60vh',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts (Lato and Roboto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <app-root></app-root>
+  <script>
+    // Light/Dark mode toggle logic with icon update
+    function setDarkMode(enabled) {
+      if (enabled) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+      updateDarkModeIcons();
+    }
+
+    function updateDarkModeIcons() {
+      // Show/hide icons based on mode
+      var isDark = document.documentElement.classList.contains('dark');
+      document.querySelectorAll('#darkModeToggleDesktop .fa-moon, #darkModeToggleMobile .fa-moon').forEach(function(el) {
+        el.parentElement.classList.toggle('hidden', isDark);
+      });
+      document.querySelectorAll('#darkModeToggleDesktop .fa-sun, #darkModeToggleMobile .fa-sun').forEach(function(el) {
+        el.parentElement.classList.toggle('hidden', !isDark);
+      });
+    }
+
+    // On load, set theme from localStorage or system preference
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        setDarkMode(true);
+      } else {
+        setDarkMode(false);
+      }
+      updateDarkModeIcons();
+    })();
+
+    // Listen for toggle button clicks
+    document.addEventListener('DOMContentLoaded', function() {
+      function toggle() {
+        setDarkMode(!document.documentElement.classList.contains('dark'));
+      }
+      const desktopBtn = document.getElementById('darkModeToggleDesktop');
+      const mobileBtn = document.getElementById('darkModeToggleMobile');
+      if (desktopBtn) desktopBtn.addEventListener('click', toggle);
+      if (mobileBtn) mobileBtn.addEventListener('click', toggle);
+      updateDarkModeIcons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+.home-header-bg {
+	background: url('/code.jpg') center top/cover no-repeat, #b91c1c;
+	/* Fallback color is the original bg-primary-dark (#b91c1c) */
+	position: relative;
+}
+
+.home-header-overlay {
+	background: rgba(40, 40, 40, 0.85); /* subtle gray overlay */
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: 0;
+}
