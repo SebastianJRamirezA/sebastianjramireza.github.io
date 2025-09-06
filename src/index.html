@@ -11,6 +11,27 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
+    // Mobile menu toggle logic
+    document.addEventListener('DOMContentLoaded', function() {
+      var menuBtn = document.getElementById('mobileMenuButton');
+      var menu = document.getElementById('mobile-menu');
+      var menuIcon = document.getElementById('mobileMenuIcon');
+      if (menuBtn && menu && menuIcon) {
+        menuBtn.addEventListener('click', function() {
+          var isOpen = !menu.classList.contains('hidden');
+          menu.classList.toggle('hidden');
+          menuBtn.setAttribute('aria-expanded', String(!isOpen));
+          // Toggle icon between bars and close
+          if (isOpen) {
+            menuIcon.classList.remove('fa-xmark', 'fa-times');
+            menuIcon.classList.add('fa-bars');
+          } else {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark'); // FontAwesome 6 uses fa-xmark for close
+          }
+        });
+      }
+    });
     tailwind.config = {
       darkMode: 'class', // or 'media'
       theme: {
@@ -55,7 +76,7 @@
 <body>
   <app-root></app-root>
   <script>
-    // Light/Dark mode toggle logic
+    // Light/Dark mode toggle logic with icon update
     function setDarkMode(enabled) {
       if (enabled) {
         document.documentElement.classList.add('dark');
@@ -64,7 +85,20 @@
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
       }
+      updateDarkModeIcons();
     }
+
+    function updateDarkModeIcons() {
+      // Show/hide icons based on mode
+      var isDark = document.documentElement.classList.contains('dark');
+      document.querySelectorAll('#darkModeToggleDesktop .fa-moon, #darkModeToggleMobile .fa-moon').forEach(function(el) {
+        el.parentElement.classList.toggle('hidden', isDark);
+      });
+      document.querySelectorAll('#darkModeToggleDesktop .fa-sun, #darkModeToggleMobile .fa-sun').forEach(function(el) {
+        el.parentElement.classList.toggle('hidden', !isDark);
+      });
+    }
+
     // On load, set theme from localStorage or system preference
     (function() {
       const saved = localStorage.getItem('theme');
@@ -73,7 +107,9 @@
       } else {
         setDarkMode(false);
       }
+      updateDarkModeIcons();
     })();
+
     // Listen for toggle button clicks
     document.addEventListener('DOMContentLoaded', function() {
       function toggle() {
@@ -83,6 +119,7 @@
       const mobileBtn = document.getElementById('darkModeToggleMobile');
       if (desktopBtn) desktopBtn.addEventListener('click', toggle);
       if (mobileBtn) mobileBtn.addEventListener('click', toggle);
+      updateDarkModeIcons();
     });
   </script>
 </body>

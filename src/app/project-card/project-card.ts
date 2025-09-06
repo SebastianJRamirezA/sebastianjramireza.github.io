@@ -4,7 +4,7 @@ import { Project } from '../project';
 
 @Component({
   selector: 'app-project-card',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './project-card.html',
   styleUrl: './project-card.css'
 })
