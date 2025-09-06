@@ -11,4 +11,5 @@ export interface Project {
 
     background: string;
     development: string;
+    results?: string;
 }
