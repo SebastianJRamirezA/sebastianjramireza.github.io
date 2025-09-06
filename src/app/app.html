@@ -1,36 +1,25 @@
 <!-- Navbar -->
-<nav id="navbar" class="bg-light-card dark:bg-dark-card shadow-md sticky top-0 z-50 transition-colors duration-300">
+<nav id="navbar" class="bg-primary-dark dark:bg-primary-dark text-white shadow-lg sticky top-0 z-50 border-b border-primary-dark/70 dark:border-primary-dark/70">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+  <div class="flex items-center justify-between h-20">
       <div class="flex-shrink-0">
-        <a [routerLink]="'/'"
-          class="text-2xl font-heading font-bold text-primary-DEFAULT dark:text-primary-DEFAULT hover:opacity-80 transition-opacity">
-          <img src="long.png" alt="Sebastian Ramirez Logo" class="h-8 md:h-16 inline-block">
+        <a [routerLink]="'/'" class="flex items-center gap-2 text-3xl font-heading font-extrabold text-white hover:opacity-80 transition-opacity">
+          <img src="logo.jpg" alt="Sebastian Ramirez Logo" class="h-10 md:h-16 inline-block">
         </a>
       </div>
-      <div class="hidden md:flex items-center space-x-4">
-        <a [routerLink]="'/about'"
-          class="nav-link px-3 py-2 rounded-md text-sm font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">About
-          Me</a>
-        <a [routerLink]="'/projects'"
-          class="nav-link px-3 py-2 rounded-md text-sm font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Projects</a>
-        <a href="#contact"
-          class="nav-link px-3 py-2 rounded-md text-sm font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Contact</a>
-        <button id="darkModeToggleDesktop"
-          class="p-2 rounded-md text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          aria-label="Toggle dark mode">
-          <i class="fas fa-moon text-indigo-400"></i>
+  <div class="hidden md:flex items-center gap-6">
+  <a [routerLink]="'/about'" class="px-4 py-2 rounded-lg text-base font-semibold text-white hover:bg-primary-DEFAULT/80 hover:text-white dark:hover:bg-primary-DEFAULT/80 transition-all transform hover:scale-105 hover:shadow-lg hover:underline underline-offset-4">About Me</a>
+  <a [routerLink]="'/projects'" class="px-4 py-2 rounded-lg text-base font-semibold text-white hover:bg-primary-DEFAULT/80 hover:text-white dark:hover:bg-primary-DEFAULT/80 transition-all transform hover:scale-105 hover:shadow-lg hover:underline underline-offset-4">Projects</a>
+  <a href="#contact" class="px-4 py-2 rounded-lg text-base font-semibold text-white hover:bg-primary-DEFAULT/80 hover:text-white dark:hover:bg-primary-DEFAULT/80 transition-all transform hover:scale-105 hover:shadow-lg hover:underline underline-offset-4">Contact</a>
+        <button id="darkModeToggleDesktop" class="p-2 rounded-lg text-white hover:bg-primary-DEFAULT/80 transition-all transform hover:scale-110 hover:shadow-lg" aria-label="Toggle dark mode">
+          <i class="fas fa-moon text-indigo-200"></i>
         </button>
       </div>
       <div class="md:hidden flex items-center">
-        <button id="darkModeToggleMobile"
-          class="p-2 mr-2 rounded-md text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          aria-label="Toggle dark mode">
-          <i class="fas fa-moon text-indigo-400"></i>
+        <button id="darkModeToggleMobile" class="p-2 mr-2 rounded-lg text-white hover:bg-primary-DEFAULT/80 transition-all transform hover:scale-110 hover:shadow-lg" aria-label="Toggle dark mode">
+          <i class="fas fa-moon text-indigo-200"></i>
         </button>
-        <button id="mobileMenuButton"
-          class="inline-flex items-center justify-center p-2 rounded-md text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors"
-          aria-controls="mobile-menu" aria-expanded="false">
+        <button id="mobileMenuButton" class="inline-flex items-center justify-center p-2 rounded-lg text-white hover:bg-primary-DEFAULT/80 focus:outline-none transition-all transform hover:scale-110 hover:shadow-lg" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <i id="mobileMenuIcon" class="fas fa-bars"></i>
         </button>
@@ -40,16 +29,11 @@
 
   <!-- Mobile menu -->
   <div class="md:hidden hidden" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a href="#about"
-        class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">About
-        Me</a>
-      <a href="#skills"
-        class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Skills</a>
-      <a href="#projects"
-        class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Projects</a>
-      <a href="#contact"
-        class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium text-light-text dark:text-dark-text hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Contact</a>
+    <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+  <a href="#about" class="block px-4 py-3 rounded-xl text-lg font-semibold text-white hover:bg-primary-DEFAULT/80 hover:text-white transition-all transform hover:scale-105 hover:shadow-lg hover:underline underline-offset-4">About Me</a>
+  <a href="#skills" class="block px-4 py-3 rounded-xl text-lg font-semibold text-white hover:bg-primary-DEFAULT/80 hover:text-white transition-all transform hover:scale-105 hover:shadow-lg hover:underline underline-offset-4">Skills</a>
+  <a href="#projects" class="block px-4 py-3 rounded-xl text-lg font-semibold text-white hover:bg-primary-DEFAULT/80 hover:text-white transition-all transform hover:scale-105 hover:shadow-lg hover:underline underline-offset-4">Projects</a>
+  <a href="#contact" class="block px-4 py-3 rounded-xl text-lg font-semibold text-white hover:bg-primary-DEFAULT/80 hover:text-white transition-all transform hover:scale-105 hover:shadow-lg hover:underline underline-offset-4">Contact</a>
     </div>
   </div>
 </nav>
@@ -57,21 +41,18 @@
 <router-outlet></router-outlet>
 
 <!-- Contact Section -->
-<section id="contact" class="py-12 md:py-20">
+<section id="contact" class="py-16 md:py-28 bg-white dark:bg-dark-bg transition-colors duration-300">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="section-title">Get In Touch</h2>
+  <h2 class="text-4xl md:text-5xl font-heading font-extrabold text-center mb-12 md:mb-20 text-primary-DEFAULT dark:text-white tracking-tight drop-shadow-lg">Get In Touch</h2>
     <div class="text-center max-w-2xl mx-auto">
-      <p class="text-lg text-light-text dark:text-dark-text mb-8">
-        I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.
-        Feel free to reach out!
+      <p class="text-xl text-light-text dark:text-dark-text mb-10 font-medium">
+        I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!
       </p>
-      <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-        <a href="mailto:sebastian.ramirez.dev@example.com"
-          class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg shadow-md text-primary-DEFAULT bg-primary-DEFAULT hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT transition-transform transform hover:scale-105">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+  <a href="mailto:sebastian.ramirez.dev@example.com" class="modern-btn px-6 py-3 text-base border-2 border-primary-DEFAULT dark:border-primary-dark rounded-xl font-bold bg-white dark:bg-dark-card text-primary-DEFAULT dark:text-white transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-primary-DEFAULT dark:hover:bg-primary-dark hover:text-white hover:underline underline-offset-4">
           <i class="fas fa-envelope mr-2"></i> Send Email
         </a>
-        <a href="https://www.linkedin.com/in/sebastianramirezdev/" target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-8 py-3 border border-primary-DEFAULT text-base font-medium rounded-lg shadow-md text-primary-DEFAULT dark:text-primary-DEFAULT dark:hover:text-white hover:text-white hover:bg-primary-DEFAULT dark:hover:bg-primary-DEFAULT focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT transition-all transform hover:scale-105">
+  <a href="https://www.linkedin.com/in/sebastianramirezdev/" target="_blank" rel="noopener noreferrer" class="modern-btn px-6 py-3 text-base border-2 border-primary-DEFAULT dark:border-primary-dark rounded-xl font-bold bg-white dark:bg-dark-card text-primary-DEFAULT dark:text-white transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-primary-DEFAULT dark:hover:bg-primary-dark hover:text-white hover:underline underline-offset-4">
           <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
         </a>
       </div>
@@ -80,25 +61,20 @@
 </section>
 
 <!-- Footer -->
-<footer
-  class="bg-light-card dark:bg-dark-card text-light-text dark:text-dark-text py-8 text-center transition-colors duration-300">
+<footer class="bg-dark-card dark:bg-primary-dark border-t border-gray-200 dark:border-primary-dark/70 text-gray-100 dark:text-gray-200 py-8 text-center">
   <div class="container mx-auto px-4">
-    <div class="flex justify-center space-x-6 mb-4">
-      <a href="https://github.com/SebastianJRamirezA" target="_blank" rel="noopener noreferrer"
-        aria-label="GitHub Profile"
-        class="text-2xl hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT transition-colors">
+    <div class="flex justify-center gap-8 mb-4">
+      <a href="https://github.com/SebastianJRamirezA" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-3xl hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT transition-colors">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/sebastianramirezdev/" target="_blank" rel="noopener noreferrer"
-        aria-label="LinkedIn Profile"
-        class="text-2xl hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT transition-colors">
+      <a href="https://www.linkedin.com/in/sebastianramirezdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="text-3xl hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT transition-colors">
         <i class="fab fa-linkedin"></i>
       </a>
     </div>
-    <p class="text-sm">
+    <p class="text-base font-semibold text-white dark:text-gray-100">
       &copy; <span id="currentYear"></span> Sebastian Ramirez. All rights reserved.
     </p>
-    <p class="text-xs mt-1">
+    <p class="text-xs mt-2 text-gray-300 dark:text-gray-300">
       Built with HTML, Tailwind CSS & JavaScript.
     </p>
   </div>

@@ -1,17 +1,11 @@
-<div
-    class="bg-light-card dark:bg-dark-card rounded-xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
-    <img [src]="project.imageUrl" alt="Pitch Prediction using Deep Learning" class="w-full h-64 object-cover" />
-    <div class="p-6 flex flex-col flex-grow">
-        <h3 class="text-2xl font-display font-semibold mb-3 text-primary-DEFAULT dark:text-primary-DEFAULT">{{
-            project.title }}</h3>
-        <p class="text-sm text-light-text dark:text-dark-text mb-2 leading-relaxed">
-            {{ project.description }}
-        </p>
-        <div class="mt-auto pt-4 flex space-x-3">
-            <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
-                <i class="fab fa-github mr-2"></i>
-                View on GitHub
+<div class="bg-white dark:bg-dark-card rounded-lg shadow-lg flex flex-col overflow-hidden transition-colors duration-300">
+    <img [src]="project.imageUrl" alt="Project image" class="w-full h-64 object-cover">
+    <div class="flex flex-col flex-grow p-6">
+        <h3 class="text-2xl font-heading font-bold mb-4 text-primary-DEFAULT dark:text-white">{{ project.title }}</h3>
+        <p class="text-base text-light-text dark:text-dark-text mb-4 leading-relaxed">{{ project.description }}</p>
+        <div class="mt-auto pt-4 flex gap-3">
+            <a *ngIf="project.projectUrl" [href]="project.projectUrl" target="_blank" rel="noopener noreferrer" class="modern-btn">
+                <i class="fab fa-github mr-2"></i> View on GitHub
             </a>
         </div>
     </div>
